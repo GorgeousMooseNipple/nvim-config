@@ -8,3 +8,10 @@ if vim.fn.has('termguicolors') == 1 then
     vim.opt.termguicolors = true
 end
 
+-- Change nvim-cmp pop-up completion menu colours
+vim.cmd[[highlight CmpItemAbbrDefault guifg=#665c54]]
+vim.cmd[[highlight CmpItemAbbrMatchDefault guifg=lightgrey]]
+vim.cmd[[highlight CmpItemAbbrMatchFuzzyDefault guifg=lightgrey]]
+vim.cmd[[highlight CmpItemKindDefault guifg=#fabd2f]]
+vim.cmd[[highlight CmpItemMenuDefault guifg=lightgrey]]
+
