@@ -1,26 +1,22 @@
 local lsp_installer = require('nvim-lsp-installer')
 
-lsp_installer.on_server_ready(function(server)
+local lspconfig = require('lspconfig')
+
+local servers = { 'sumneko_lua', 'pyright', 'rust_analyzer' }
+
+lsp_installer.setup({
+    ensure_installed = servers,
+})
+
+for _, server in pairs(servers) do
     local opts = {
         on_attach = require('bathcat.lsp.handlers').on_attach,
         capabilities = require('bathcat.lsp.handlers').capabilities,
     }
-
-    if server.name == 'sumneko_lua' then
-        local sumneko_opts = require('bathcat.lsp.settings.sumneko_lua')
-        opts = vim.tbl_deep_extend('force', sumneko_opts, opts)
+    local has_settings, settings = pcall(require, 'bathcat.lsp.settings.' .. server)
+    if has_settings then
+        opts = vim.tbl_deep_extend('force', opts, settings)
     end
+    lspconfig[server].setup(opts)
+end
 
-    if server.name == 'pyright' then
-        local pyright_opts = require('bathcat.lsp.settings.pyright')
-        opts = vim.tbl_deep_extend('force', pyright_opts, opts)
-    end
-
-    if server.name == 'rust-analyzer' then
-        local rust_analyzer_opts = require('bathcat.lsp.settings.rust_analyzer')
-        opts = vim.tbl_deep_extend('force', rust_analyzer_opts, opts)
-    end
-
-    server:setup(opts)
-
-end)

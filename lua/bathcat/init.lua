@@ -1,6 +1,6 @@
 require("bathcat.set")
 require("bathcat.plugins")
-require("bathcat.remap")
 require("bathcat.set_plugins")
+require("bathcat.remap")
 require("bathcat.lsp")
 require('bathcat.cmp')

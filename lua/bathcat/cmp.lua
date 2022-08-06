@@ -1,6 +1,11 @@
 local cmp = require('cmp')
 
 cmp.setup({
+    snippet = {
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+        end
+    },
     mapping = {
         ['<C-k>'] = cmp.mapping.select_prev_item(),
         ['<C-j>'] = cmp.mapping.select_next_item(),
@@ -26,26 +31,34 @@ cmp.setup({
                 fallback()
             end
         end)},
-        formatting = {
-            fields = {'kind', 'abbr', 'menu'},
-            format = function(entry, vim_item)
-                vim_item.menu = ({
-                    nvim_lsp = '[LSP]',
-                    path = '[Path]',
-                    buffer = '[Buffer]',
-                })[entry.source.name]
-                return vim_item
-            end
+    formatting = {
+        fields = {'kind', 'abbr', 'menu'},
+        format = function(entry, vim_item)
+            vim_item.menu = ({
+                nvim_lsp = '[LSP]',
+                path = '[Path]',
+                buffer = '[Buffer]',
+            })[entry.source.name]
+            return vim_item
+        end
         },
-        sources = {
-            { name = 'nvim_lsp' },
-            { name = 'buffer' },
-            { name = 'path' },
-        },
-        confirm_opts = {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = false,
-        },
-    }
-)
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'path' },
+        { name = 'cmdline' },
+        { name = 'vsnip' },
+    },
+    confirm_opts = {
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = false,
+    },
+})
+
+-- Enable completing paths in :
+cmp.setup.cmdline(':',  {
+    sources = cmp.config.sources({
+        { name = 'path' }
+    })
+})
 
