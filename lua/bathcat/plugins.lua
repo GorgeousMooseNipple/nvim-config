@@ -1,0 +1,34 @@
+-- This file can be loaded by calling 'lua require('packages') from your init.vim
+
+-- Only required if you have packer configured as 'opt'
+vim.cmd [[packadd packer.nvim]]
+
+return require('packer').startup(function()
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
+    -- Info bar at the bottom
+    use 'vim-airline/vim-airline'
+    -- Colour schemes
+    use 'chriskempson/base16-vim'
+    -- Vertical indent lines
+    use 'yggdroot/indentLine'
+    -- Rainbow parenthesis
+    use 'luochen1990/rainbow'
+    -- Fuzzy finder Telescope
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+    -- LSP
+    use 'neovim/nvim-lspconfig' 
+    -- Language servers installer
+    use 'williamboman/nvim-lsp-installer'
+    -- Completions
+    use { 'hrsh7th/nvim-cmp', branch = 'main' }
+    use { 'hrsh7th/cmp-nvim-lsp', branch = 'main' } -- Completions for nvim builtin LSP
+    use { 'hrsh7th/cmp-buffer', branch = 'main' } -- Buffer completions
+    use { 'hrsh7th/cmp-path', branch = 'main' } -- Path completions
+    use { 'hrsh7th/cmp-cmdline', branch = 'main' } -- Cmd completions
+    -- Highlight other uses of current word
+    use 'RRethy/vim-illuminate'
+end)
