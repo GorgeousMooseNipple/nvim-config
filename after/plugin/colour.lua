@@ -9,9 +9,14 @@ if vim.fn.has('termguicolors') == 1 then
 end
 
 -- Change nvim-cmp pop-up completion menu colours
-vim.cmd[[highlight CmpItemAbbrDefault guifg=#665c54]]
-vim.cmd[[highlight CmpItemAbbrMatchDefault guifg=lightgrey]]
-vim.cmd[[highlight CmpItemAbbrMatchFuzzyDefault guifg=lightgrey]]
-vim.cmd[[highlight CmpItemKindDefault guifg=#fabd2f]]
-vim.cmd[[highlight CmpItemMenuDefault guifg=lightgrey]]
+vim.api.nvim_command[[highlight CmpItemAbbrDefault guifg=#665c54]]
+vim.api.nvim_command[[highlight CmpItemAbbrMatchDefault guifg=lightgrey]]
+vim.api.nvim_command[[highlight CmpItemAbbrMatchFuzzyDefault guifg=lightgrey]]
+vim.api.nvim_command[[highlight CmpItemKindDefault guifg=#fabd2f]]
+vim.api.nvim_command[[highlight CmpItemMenuDefault guifg=lightgrey]]
+
+-- Set up LSP highlights. Illuminate will use theese.
+vim.api.nvim_command[[ hi def link LspReferenceText CursorLine ]]
+vim.api.nvim_command[[ hi def link LspReferenceWrite CursorLine ]]
+vim.api.nvim_command[[ hi def link LspReferenceRead CursorLine ]]
 

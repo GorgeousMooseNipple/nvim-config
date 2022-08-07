@@ -35,7 +35,10 @@ vim.opt.hidden = true
 -- Column on the left for displaying linter warnings and errors
 vim.opt.signcolumn = 'yes'
 
+-- Syntax highlights
 vim.opt.syntax = 'enable'
+-- Activate filetype detection
+vim.cmd[[filetype plugin indent on]]
 
 -- Completion
 -- menuone: popup even when there's only one match
