@@ -2,7 +2,7 @@ local lsp_installer = require('nvim-lsp-installer')
 
 local lspconfig = require('lspconfig')
 
-local servers = { 'sumneko_lua', 'pyright', 'rust_analyzer' }
+local servers = { 'sumneko_lua', 'pyright', 'rust_analyzer', 'bashls' }
 
 lsp_installer.setup({
     ensure_installed = servers,
