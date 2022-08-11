@@ -50,3 +50,6 @@ vim.opt.cmdheight = 2
 -- Diagnostic messages update time. Default is 4000, too slow.
 vim.opt.updatetime = 300
 
+-- Disable mouse
+vim.opt.mouse = ''
+
