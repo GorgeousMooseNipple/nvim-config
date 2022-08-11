@@ -3,10 +3,10 @@ local M = {}
 M.setup = function()
     -- Signs for linting panel on the left side of the screen
 	local signs = {
-		{ name = "DiagnosticSignError", text = "X" },
-		{ name = "DiagnosticSignWarn", text = "!" },
-		{ name = "DiagnosticSignHint", text = ">" },
-		{ name = "DiagnosticSignInfo", text = "I" },
+		{ name = "DiagnosticSignError", text = "✖" },
+		{ name = "DiagnosticSignWarn", text = "⚠" },
+		{ name = "DiagnosticSignHint", text = "ℹ"  },
+		{ name = "DiagnosticSignInfo", text = "?" },
 	}
 
     for _, sign in pairs(signs) do
