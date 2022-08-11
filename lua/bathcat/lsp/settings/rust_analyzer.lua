@@ -31,7 +31,10 @@ return {
             },
             diagnostics = { enable = true },
             -- server = { path='/home/dmitry/.local/bin/rust-analyzer' },
-            server = { path='/home/dmitry/.local/share/nvim/lsp_servers/rust_analyzer/rust-analyzer' },
+            -- server = { path='/home/dmitry/.local/share/nvim/lsp_servers/rust_analyzer/rust-analyzer' },
+            checkOnSave = {
+                command = 'clippy'
+            },
         }
     }
 }
