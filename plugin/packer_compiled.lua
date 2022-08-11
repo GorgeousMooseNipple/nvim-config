@@ -134,11 +134,6 @@ _G.packer_plugins = {
     path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/rainbow",
     url = "https://github.com/luochen1990/rainbow"
   },
-  ["rust-tools.nvim"] = {
-    loaded = true,
-    path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
-    url = "https://github.com/simrat39/rust-tools.nvim"
-  },
   ["rust.vim"] = {
     loaded = true,
     path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/rust.vim",

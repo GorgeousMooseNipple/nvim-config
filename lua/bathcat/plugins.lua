@@ -38,6 +38,4 @@ return require('packer').startup(function()
     use 'RRethy/vim-illuminate'
     -- Rust file detection, syntax highlighting, formating etc
     use 'rust-lang/rust.vim'
-    -- Enable more features of rust-analyzer, such as inlay hints and more
-    use 'simrat39/rust-tools.nvim'
 end)
