@@ -17,6 +17,9 @@ for _, server in pairs(servers) do
     if has_settings then
         opts = vim.tbl_deep_extend('force', opts, settings)
     end
+    if server == 'rust_analyzer' then
+        opts.update_in_insert = true
+    end
     lspconfig[server].setup(opts)
 end
 
