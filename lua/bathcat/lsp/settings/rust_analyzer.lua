@@ -1,17 +1,5 @@
--- Rust-tool options
--- local tools_opts = {
---     tools = { autoSetHints = true,
---     hover_with_actions = true,
---     inlay_hints = {
---         show_parameter_hints = false,
---         parameter_hints_prefix = '',
---         other_hints_prefix = '',
---     }
--- }}
--- 
--- require('rust-tools').setup(tools_opts)
-
 return {
+    update_in_insert = true,
     flags = {
         debounce_text_changes = 150,
     },
@@ -30,8 +18,6 @@ return {
                 postfix = { enable = false },
             },
             diagnostics = { enable = true },
-            -- server = { path='/home/dmitry/.local/bin/rust-analyzer' },
-            -- server = { path='/home/dmitry/.local/share/nvim/lsp_servers/rust_analyzer/rust-analyzer' },
             checkOnSave = {
                 command = 'clippy'
             },

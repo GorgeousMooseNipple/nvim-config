@@ -2,7 +2,7 @@ local lsp_installer = require('nvim-lsp-installer')
 
 local lspconfig = require('lspconfig')
 
-local servers = { 'sumneko_lua', 'pyright', 'rust_analyzer', 'bashls', 'taplo' }
+local servers = { 'sumneko_lua', 'pyright', 'rust_analyzer', 'bashls', 'taplo', 'gopls' }
 
 lsp_installer.setup({
     ensure_installed = servers,
@@ -16,9 +16,6 @@ for _, server in pairs(servers) do
     local has_settings, settings = pcall(require, 'bathcat.lsp.settings.' .. server)
     if has_settings then
         opts = vim.tbl_deep_extend('force', opts, settings)
-    end
-    if server == 'rust_analyzer' then
-        opts.update_in_insert = true
     end
     lspconfig[server].setup(opts)
 end
