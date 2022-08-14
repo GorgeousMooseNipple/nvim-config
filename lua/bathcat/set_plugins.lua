@@ -13,3 +13,6 @@ vim.g.NERDTrimTrailingWhitespace = 1
 vim.g.NERDToggleCheckAllLines = 1
 vim.g.NERDCompactSexyComs = 1
 
+-- Illuminate
+vim.g.Illuminate_delay = 200
+
