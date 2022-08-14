@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/indentLine",
     url = "https://github.com/yggdroot/indentLine"
   },
+  nerdcommenter = {
+    loaded = true,
+    path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/nerdcommenter",
+    url = "https://github.com/preservim/nerdcommenter"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/nvim-cmp",

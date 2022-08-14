@@ -40,4 +40,6 @@ return require('packer').startup(function()
     use 'rust-lang/rust.vim'
     -- Debugger
     use 'mfussenegger/nvim-dap'
+    -- Commenter
+    use 'preservim/nerdcommenter'
 end)
