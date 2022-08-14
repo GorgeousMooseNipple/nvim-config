@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["papercolor-theme"] = {
+    loaded = true,
+    path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/papercolor-theme",
+    url = "https://github.com/NLKNguyen/papercolor-theme"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -154,10 +159,20 @@ _G.packer_plugins = {
     path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tender.vim"] = {
+    loaded = true,
+    path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/tender.vim",
+    url = "https://github.com/jacoborus/tender.vim"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
+  },
+  ["vim-color-spring-night"] = {
+    loaded = true,
+    path = "/home/dmitry/.local/share/nvim/site/pack/packer/start/vim-color-spring-night",
+    url = "https://github.com/rhysd/vim-color-spring-night"
   },
   ["vim-illuminate"] = {
     loaded = true,

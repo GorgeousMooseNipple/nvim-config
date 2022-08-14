@@ -13,6 +13,9 @@ return require('packer').startup(function()
     use 'vim-airline/vim-airline'
     -- Colour schemes
     use 'chriskempson/base16-vim'
+    use 'NLKNguyen/papercolor-theme'
+    use 'jacoborus/tender.vim'
+    use 'rhysd/vim-color-spring-night'
     -- Vertical indent lines
     use 'yggdroot/indentLine'
     -- Rainbow parenthesis
