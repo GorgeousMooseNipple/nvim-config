@@ -5,12 +5,12 @@ local vnoremap = require('bathcat.keymap').vnoremap
 nnoremap('<leader>ps', '<cmd>Telescope find_files<cr>')
 
 -- nvim-dap mappings
-nnoremap('<leader>dsb', ':lua require("dap").toggle_breakpoint()<CR>')
-nnoremap('<leader>dsc', ':lua require("dap").continue()<CR>')
-nnoremap('<leader>dsi', ':lua require("dap").step_into()<CR>')
-nnoremap('<leader>dso', ':lua require("dap").step_over()<CR>')
-nnoremap('<leader>dsr', ':lua require("dap").step_out()<CR>')
-nnoremap('<leader>dro', ':lua require("dap").repl.open()<CR>')
+nnoremap('<leader>db', ':lua require("dap").toggle_breakpoint()<CR>')
+nnoremap('<leader>dc', ':lua require("dap").continue()<CR>')
+nnoremap('<leader>ds', ':lua require("dap").step_into()<CR>')
+nnoremap('<leader>dn', ':lua require("dap").step_over()<CR>')
+nnoremap('<leader>do', ':lua require("dap").step_out()<CR>')
+nnoremap('<leader>dr', ':lua require("dap").repl.open()<CR>')
 
 -- Nerdcommenter
 nnoremap('<leader>cc', '<plug>NERDCommenterInvert')
