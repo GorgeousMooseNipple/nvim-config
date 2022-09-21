@@ -3,7 +3,7 @@ require('telescope').setup{
         mappings = {
             i = {
                 ['<CR>'] = 'select_tab',
-                ['<C-t>'] = 'select_default',
+                ['<C-o>'] = 'select_default',
             }
         }
     }
