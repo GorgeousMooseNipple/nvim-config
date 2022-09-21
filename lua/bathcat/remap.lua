@@ -11,3 +11,9 @@ nnoremap('<leader><leader>', '<C-^>')
 nnoremap('H', '^')
 nnoremap('L', '$')
 
+nnoremap('<A-j>', ':m +1<CR>')
+nnoremap('<A-k>', ':m -2<CR>')
+
+vnoremap("<A-j>", ":m '>+1<CR>gv=gv")
+vnoremap("<A-k>", ":m '<-2<CR>gv=gv")
+
