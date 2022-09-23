@@ -56,6 +56,7 @@ cmp.setup({
     experimental = {
         ghost_text = true,
     },
+    preselect = { 'None', }
 })
 
 -- Enable completing paths in :
