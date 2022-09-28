@@ -16,6 +16,10 @@ return require('packer').startup(function()
     use 'NLKNguyen/papercolor-theme'
     use 'jacoborus/tender.vim'
     use 'rhysd/vim-color-spring-night'
+    use {
+        'shaunsingh/oxocarbon.nvim',
+        run = './install.sh',
+    }
     -- Vertical indent lines
     use 'yggdroot/indentLine'
     -- Rainbow parenthesis

@@ -2,14 +2,16 @@
 vim.g.base16colorspace = 256
 vim.opt.background = 'dark'
 -- vim.cmd('colorscheme base16-gruvbox-dark-hard')
-vim.cmd('colorscheme PaperColor')
+-- vim.cmd('colorscheme PaperColor')
 -- vim.cmd('colorscheme tender')
 -- vim.cmd('colorscheme spring-night')
+vim.cmd('colorscheme oxocarbon')
 
--- Vim.fn.has() returns 0 for false and 1 for true which are both truthy in lua so compare to 1
--- if vim.fn.has('termguicolors') == 1 then
-    -- vim.opt.termguicolors = true
--- end
+
+-- vim.fn.has() returns 0 for false and 1 for true which are both truthy in lua so compare to 1
+if vim.fn.has('termguicolors') == 1 then
+    vim.opt.termguicolors = true
+end
 
 -- Change nvim-cmp pop-up completion menu colours
 vim.api.nvim_command[[highlight CmpItemAbbrDefault guifg=#665c54]]

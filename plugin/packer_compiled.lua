@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/bathcat/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["oxocarbon.nvim"] = {
+    loaded = true,
+    path = "/home/bathcat/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
+    url = "https://github.com/shaunsingh/oxocarbon.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/bathcat/.local/share/nvim/site/pack/packer/start/packer.nvim",
