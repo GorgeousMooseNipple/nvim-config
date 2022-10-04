@@ -7,8 +7,8 @@ cmp.setup({
         end
     },
     mapping = {
-        ['<C-k>'] = cmp.mapping.select_prev_item(),
-        ['<C-j>'] = cmp.mapping.select_next_item(),
+        -- ['<C-k>'] = cmp.mapping.select_prev_item(),
+        -- ['<C-j>'] = cmp.mapping.select_next_item(),
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
         ['<C-e>'] = cmp.mapping {
             i = cmp.mapping.abort(),
@@ -17,14 +17,14 @@ cmp.setup({
         -- Accept currently selected item. If none selected, then first item.
         -- Set select to false to only confirm explicitly selected items
         ['<CR>'] = cmp.mapping.confirm( {select = false} ),
-        ['<Tab>'] = cmp.mapping(function(fallback)
+        ['<C-j>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             else
                 fallback()
             end
         end, {'i', 's'}),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
+        ['<C-k>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             else
@@ -38,6 +38,8 @@ cmp.setup({
                 nvim_lsp = '[LSP]',
                 path = '[Path]',
                 buffer = '[Buffer]',
+                cmdline = '[CMD]',
+                vsnip = '[Snip]',
             })[entry.source.name]
             return vim_item
         end
@@ -46,7 +48,12 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'buffer' },
         { name = 'path' },
-        { name = 'cmdline' },
+        {
+            name = 'cmdline',
+            entry_filter = function(entry, ctx)
+                return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Variable'
+            end
+        },
         { name = 'vsnip' },
     },
     confirm_opts = {
