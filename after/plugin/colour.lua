@@ -1,9 +1,9 @@
 -- Set up base16-gruvbox-dark-hard colour scheme
 vim.g.base16colorspace = 256
 vim.opt.background = 'dark'
--- vim.cmd('colorscheme base16-gruvbox-dark-hard')
+vim.cmd('colorscheme base16-gruvbox-dark-hard')
 -- vim.cmd('colorscheme PaperColor')
-vim.cmd('colorscheme tender')
+-- vim.cmd('colorscheme tender')
 -- vim.cmd('colorscheme spring-night')
 -- vim.cmd('colorscheme oxocarbon')
 
