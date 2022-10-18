@@ -25,5 +25,5 @@ vim.api.nvim_command[[ hi def link LspReferenceText CursorLine ]]
 vim.api.nvim_command[[ hi def link LspReferenceWrite CursorLine ]]
 vim.api.nvim_command[[ hi def link LspReferenceRead CursorLine ]]
 
-vim.g.airline_section_z = '%3.p%%%#__accent_bold# ln:%l%#__restore__#%#__accent_bold#/%L%#__restore__#%#__accent_bold# cl:%-3.v%#__restore__#'
+vim.g.airline_section_z = '%2.p%%%#__accent_bold# ln:%l%#__restore__#%#__accent_bold#/%L%#__restore__#%#__accent_bold# cl:%-3.v%#__restore__#'
 
