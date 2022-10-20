@@ -42,6 +42,12 @@ M.setup = function()
         border = 'rounded',
         width = 60,
     })
+
+    -- Format on save for .go files
+    vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = '*.go',
+        command = 'lua vim.lsp.buf.format()',
+    })
 end
 
 local function lsp_highlight_document(client)
