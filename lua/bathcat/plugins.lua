@@ -32,7 +32,10 @@ return require('packer').startup(function()
     -- LSP
     use 'neovim/nvim-lspconfig'
     -- Language servers installer
-    use 'williamboman/nvim-lsp-installer'
+    -- Old installer
+    -- use 'williamboman/nvim-lsp-installer'
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
     -- Completions
     use { 'hrsh7th/nvim-cmp', branch = 'main' } -- Completions framework
     use { 'hrsh7th/cmp-nvim-lsp', branch = 'main' } -- Completions for nvim builtin LSP

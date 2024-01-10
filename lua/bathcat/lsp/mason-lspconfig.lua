@@ -1,10 +1,10 @@
-local lsp_installer = require('nvim-lsp-installer')
+local mason_lspconfig = require('mason-lspconfig')
 
 local lspconfig = require('lspconfig')
 
-local servers = { 'sumneko_lua', 'pyright', 'rust_analyzer', 'bashls', 'taplo', 'gopls' }
+local servers = { 'lua_ls', 'pyright', 'rust_analyzer', 'bashls', 'taplo', 'gopls' }
 
-lsp_installer.setup({
+mason_lspconfig.setup({
     ensure_installed = servers,
 })
 

@@ -1,3 +1,4 @@
+require('mason').setup()
 require('bathcat.lsp.handlers').setup()
-require('bathcat.lsp.lsp-installer')
+require('bathcat.lsp.mason-lspconfig')
 
