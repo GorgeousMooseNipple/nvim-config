@@ -5,9 +5,9 @@ return {
             analysis = {
                 useLibraryCodeForTypes = true,
                 diagnosticSeverityOverrides = {
-                    reportGeneralTypeIssues = 'none',
-                    reportOptionalMemberAccess = 'none',
-                    reportOptionalSubscript = 'none',
+                    reportGeneralTypeIssues = 'warning',
+                    reportOptionalMemberAccess = 'warning',
+                    reportOptionalSubscript = 'warning',
                     reportPrivateImportUsage = 'none',
                 }
             }
