@@ -48,6 +48,12 @@ M.setup = function()
         pattern = '*.go',
         command = 'lua vim.lsp.buf.format()',
     })
+
+    -- Format on save for .py files
+    vim.api.nvim_create_autocmd('BufWritePost', {
+        pattern = '*.py',
+        command = 'silent !ruff format <afile>',
+    })
 end
 
 local function lsp_highlight_document(client)
