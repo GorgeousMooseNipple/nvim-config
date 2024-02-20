@@ -48,12 +48,6 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'buffer' },
         { name = 'path' },
-        {
-            name = 'cmdline',
-            entry_filter = function(entry, ctx)
-                return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Variable'
-            end
-        },
         { name = 'vsnip' },
     },
     confirm_opts = {
@@ -69,7 +63,13 @@ cmp.setup({
 -- Enable completing paths in :
 cmp.setup.cmdline(':',  {
     sources = cmp.config.sources({
-        { name = 'path' }
+        { name = 'path' },
+        {
+            name = 'cmdline',
+            entry_filter = function(entry, ctx)
+                return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Variable'
+            end
+        },
     })
 })
 
