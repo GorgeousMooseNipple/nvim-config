@@ -7,8 +7,8 @@ cmp.setup({
         end
     },
     mapping = {
-        -- ['<C-k>'] = cmp.mapping.select_prev_item(),
-        -- ['<C-j>'] = cmp.mapping.select_next_item(),
+        ['<C-k>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-j>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
         ['<C-e>'] = cmp.mapping {
             i = cmp.mapping.abort(),
