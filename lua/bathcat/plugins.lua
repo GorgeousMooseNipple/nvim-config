@@ -26,7 +26,7 @@ return require('packer').startup(function()
     use 'luochen1990/rainbow'
     -- Fuzzy finder Telescope
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        'nvim-telescope/telescope.nvim', tag = '0.1.5',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     -- LSP
