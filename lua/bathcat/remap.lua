@@ -1,5 +1,6 @@
 local vnoremap = require('bathcat.keymap').vnoremap
 local nnoremap = require('bathcat.keymap').nnoremap
+local xnoremap = require('bathcat.keymap').xnoremap
 
 -- Copy and paste from system clipboard
 vnoremap('<C-c>', '"+y')
@@ -25,5 +26,5 @@ nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<C-d>", "<C-d>zz")
 
 -- Paste without storing replaced text in buffer
-vim.keymap.set("x", "<leader>p", "\"_dP")
+xnoremap("<leader>p", "\"_dP")
 
