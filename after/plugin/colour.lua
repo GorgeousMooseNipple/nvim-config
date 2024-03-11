@@ -1,12 +1,7 @@
--- Set up base16-gruvbox-dark-hard colour scheme
+-- Access colours present in 256 colorspace
 vim.g.base16colorspace = 256
+-- Set dark mode
 vim.opt.background = 'dark'
-vim.cmd('colorscheme base16-gruvbox-dark-hard')
--- vim.cmd('colorscheme PaperColor')
--- vim.cmd('colorscheme tender')
--- vim.cmd('colorscheme spring-night')
--- vim.cmd('colorscheme oxocarbon')
-
 
 -- vim.fn.has() returns 0 for false and 1 for true which are both truthy in lua so compare to 1
 if vim.fn.has('termguicolors') == 1 then
