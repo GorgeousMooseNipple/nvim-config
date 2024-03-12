@@ -3,6 +3,7 @@ local vnoremap = require('bathcat.keymap').vnoremap
 
 -- nnoremap('<leader>ps', function() require('telescope.builtin').grep_string({search = vim.fn.input('Grep  for > ')}) end)
 nnoremap('<leader>ps', '<cmd>Telescope find_files<cr>')
+nnoremap('<leader>ni', '<cmd>Telescope find_files no_ignore=true<cr>')
 nnoremap('<leader>lg', '<cmd>Telescope live_grep<cr>')
 
 -- nvim-dap mappings
