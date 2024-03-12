@@ -98,6 +98,8 @@ if not status_ok then
 end
 
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+-- Disable snippets
+M.capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 return M
 
