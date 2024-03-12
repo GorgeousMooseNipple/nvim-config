@@ -20,6 +20,7 @@ return require('packer').startup(function()
         'shaunsingh/oxocarbon.nvim',
         run = './install.sh',
     }
+    use 'rebelot/kanagawa.nvim'
     -- Vertical indent lines
     use 'yggdroot/indentLine'
     -- Rainbow parenthesis
