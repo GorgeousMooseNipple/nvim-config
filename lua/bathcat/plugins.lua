@@ -48,7 +48,7 @@ return require('packer').startup(function()
     -- Highlight other uses of current word
     use 'RRethy/vim-illuminate'
     -- Rust file detection, syntax highlighting, formating etc
-    use 'rust-lang/rust.vim'
+    -- use 'rust-lang/rust.vim'
     -- Debugger
     use 'mfussenegger/nvim-dap'
     -- Commenter
