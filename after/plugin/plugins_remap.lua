@@ -16,8 +16,8 @@ nnoremap('<leader>do', ':lua require("dap").step_out()<CR>')
 nnoremap('<leader>dr', ':lua require("dap").repl.open()<CR>')
 
 -- Nerdcommenter
-nnoremap('<leader>cc', '<plug>NERDCommenterInvert')
-vnoremap('<leader>cc', '<plug>NERDCommenterInvert')
+nnoremap('<leader>cc', '<plug>NERDCommenterToggle')
+vnoremap('<leader>cc', '<plug>NERDCommenterToggle')
 nnoremap('<leader>cs', '<plug>NERDCommenterSexy')
 vnoremap('<leader>cs', '<plug>NERDCommenterSexy')
 
