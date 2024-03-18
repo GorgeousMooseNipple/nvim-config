@@ -33,8 +33,6 @@ return require('packer').startup(function()
     -- LSP
     use 'neovim/nvim-lspconfig'
     -- Language servers installer
-    -- Old installer
-    -- use 'williamboman/nvim-lsp-installer'
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     -- Completions
@@ -51,6 +49,8 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-dap'
     -- Commenter
     use 'preservim/nerdcommenter'
+    -- Highlight other uses of the current word
+    use 'RRethy/vim-illuminate'
     -- Syntax highlights, seelction, navigation
     use 'nvim-treesitter/nvim-treesitter'
 end)

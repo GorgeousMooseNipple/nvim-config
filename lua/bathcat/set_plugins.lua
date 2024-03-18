@@ -21,5 +21,5 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Illuminate
-vim.g.Illuminate_delay = 200
+-- vim.g.Illuminate_delay = 200
 

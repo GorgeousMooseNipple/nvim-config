@@ -36,7 +36,7 @@ vim.opt.hidden = true
 vim.opt.signcolumn = 'yes'
 
 -- Syntax highlights
-vim.opt.syntax = 'enable'
+-- vim.opt.syntax = 'enable'
 -- Activate filetype detection
 vim.cmd[[filetype plugin indent on]]
 
