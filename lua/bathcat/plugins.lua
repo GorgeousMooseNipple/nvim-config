@@ -51,4 +51,6 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-dap'
     -- Commenter
     use 'preservim/nerdcommenter'
+    -- Syntax highlights, seelction, navigation
+    use 'nvim-treesitter/nvim-treesitter'
 end)
