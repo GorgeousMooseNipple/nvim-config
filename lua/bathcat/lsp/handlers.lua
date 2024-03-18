@@ -60,6 +60,12 @@ M.setup = function()
         pattern = '*.rs',
         command = 'lua vim.lsp.buf.format()',
     })
+
+    -- Format on save for .lua files
+    vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = '*.lua',
+        command = 'lua vim.lsp.buf.format()',
+    })
 end
 
 -- Keybindings for LSP
