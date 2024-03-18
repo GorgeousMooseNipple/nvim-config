@@ -54,6 +54,12 @@ M.setup = function()
         pattern = '*.py',
         command = 'silent !ruff format <afile>',
     })
+
+    -- Format on save for .rs files
+    vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = '*.rs',
+        command = 'lua vim.lsp.buf.format()',
+    })
 end
 
 local function lsp_highlight_document(client)
