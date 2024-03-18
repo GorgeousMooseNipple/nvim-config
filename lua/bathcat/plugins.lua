@@ -54,4 +54,6 @@ return require('packer').startup(function()
     -- Syntax highlights, seelction, navigation
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-textobjects'
+    -- Completion, annotations and signatures of neovim apis
+    use 'folke/neodev.nvim'
 end)
