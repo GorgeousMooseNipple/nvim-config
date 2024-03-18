@@ -11,4 +11,18 @@ require('nvim-treesitter.configs').setup {
             node_decremental = '<C-d>',
         },
     },
+    textobjects = {
+        move = {
+            enable = true,
+            set_jumps = true,
+            goto_next_start = {
+                [']m'] = '@function.outer',
+                [']]'] = '@block.outer',
+            },
+            goto_next_end = {
+                [']M'] = '@function.outer',
+                [']['] = '@block.outer',
+            }
+        }
+    }
 }

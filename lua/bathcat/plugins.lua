@@ -53,4 +53,5 @@ return require('packer').startup(function()
     use 'RRethy/vim-illuminate'
     -- Syntax highlights, seelction, navigation
     use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
 end)
