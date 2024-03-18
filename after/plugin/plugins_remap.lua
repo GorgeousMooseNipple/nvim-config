@@ -6,6 +6,13 @@ nnoremap('<leader>ps', '<cmd>Telescope find_files<cr>')
 nnoremap('<leader>ni', '<cmd>Telescope find_files no_ignore=true<cr>')
 nnoremap('<leader>lg', '<cmd>Telescope live_grep<cr>')
 nnoremap('<leader>sk', '<cmd>Telescope keymaps<cr>')
+nnoremap('<leader>/', function()
+    require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        winblend = 10,
+        preview = false,
+    })
+end
+)
 
 -- nvim-dap mappings
 nnoremap('<leader>db', ':lua require("dap").toggle_breakpoint()<CR>')
