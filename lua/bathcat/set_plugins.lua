@@ -12,13 +12,13 @@ vim.g.NERDCommentEmptyLines = 1
 vim.g.NERDTrimTrailingWhitespace = 1
 vim.g.NERDToggleCheckAllLines = 1
 vim.g.NERDCompactSexyComs = 1
--- vim.g.NERDDefaultAlign = 'left'
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = 'python',
-    callback =  function()
-        vim.g.NERDDefaultAlign = 'left'
-    end,
-})
+vim.g.NERDDefaultAlign = 'left'
+-- vim.api.nvim_create_autocmd('FileType', {
+    -- pattern = 'python',
+    -- callback =  function()
+        -- vim.g.NERDDefaultAlign = 'left'
+    -- end,
+-- })
 
 -- Illuminate
 -- vim.g.Illuminate_delay = 200
