@@ -9,30 +9,30 @@ cmp.setup({
     mapping = {
         ['<C-k>'] = cmp.mapping.scroll_docs(-4),
         ['<C-j>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
+        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
         ['<C-e>'] = cmp.mapping {
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
         },
-        -- Accept currently selected item. If none selected, then first item.
         -- Set select to false to only confirm explicitly selected items
-        ['<CR>'] = cmp.mapping.confirm( {select = false} ),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             else
                 fallback()
             end
-        end, {'i', 's'}),
+        end, { 'i', 's' }),
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             else
                 fallback()
             end
-        end)},
+        end, { 'i', 's' })
+    },
     formatting = {
-        fields = {'kind', 'abbr', 'menu'},
+        fields = { 'kind', 'abbr', 'menu' },
         format = function(entry, vim_item)
             vim_item.menu = ({
                 nvim_lsp = '[LSP]',
@@ -43,7 +43,7 @@ cmp.setup({
             })[entry.source.name]
             return vim_item
         end
-        },
+    },
     sources = {
         { name = 'nvim_lsp' },
         { name = 'buffer' },
@@ -60,8 +60,8 @@ cmp.setup({
     preselect = { 'None', }
 })
 
--- Enable completing paths in :
-cmp.setup.cmdline(':',  {
+-- Enable completion in :
+cmp.setup.cmdline(':', {
     sources = cmp.config.sources({
         { name = 'path' },
         {
@@ -72,4 +72,3 @@ cmp.setup.cmdline(':',  {
         },
     })
 })
-
