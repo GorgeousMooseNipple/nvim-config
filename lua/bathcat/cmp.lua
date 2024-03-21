@@ -9,7 +9,6 @@ cmp.setup({
     mapping = {
         ['<C-k>'] = cmp.mapping.scroll_docs(-4),
         ['<C-j>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
         ['<C-e>'] = cmp.mapping {
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
@@ -60,15 +59,29 @@ cmp.setup({
     preselect = { 'None', }
 })
 
--- Enable completion in :
+-- Setup completion in command mode
 cmp.setup.cmdline(':', {
+    completion = {
+        autocomplete = false,
+    },
+    mapping = cmp.mapping.preset.cmdline({
+        ['<C-space>'] = {
+            c = function(_)
+                if not cmp.visible() then
+                    cmp.complete()
+                end
+                cmp.complete_common_string()
+            end,
+        },
+    }),
     sources = cmp.config.sources({
-        { name = 'path' },
+        { name = 'path' }
+    }, {
         {
             name = 'cmdline',
-            entry_filter = function(entry, ctx)
-                return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Variable'
-            end
-        },
+            -- entry_filter = function(entry, ctx)
+            --     return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Variable'
+            -- end
+        }
     })
 })
