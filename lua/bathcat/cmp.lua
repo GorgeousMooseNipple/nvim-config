@@ -67,10 +67,19 @@ cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline({
         ['<C-space>'] = {
             c = function(_)
-                if not cmp.visible() then
-                    cmp.complete()
+                if cmp.visible() then
+                    cmp.complete_common_string()
                 end
-                cmp.complete_common_string()
+            end,
+        },
+        ['<Tab>'] = {
+            c = function(_)
+                if cmp.visible() then
+                    cmp.select_next_item()
+                else
+                    cmp.complete()
+                    cmp.complete_common_string()
+                end
             end,
         },
     }),
