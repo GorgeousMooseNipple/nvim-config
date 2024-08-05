@@ -38,7 +38,7 @@ vim.opt.signcolumn = 'yes'
 -- Syntax highlights
 -- vim.opt.syntax = 'enable'
 -- Activate filetype detection
-vim.cmd[[filetype plugin indent on]]
+vim.cmd [[filetype plugin indent on]]
 
 -- Completion
 -- menuone: popup even when there's only one match
@@ -61,3 +61,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
+-- Disable conceal for json files
+vim.g.vim_json_conceal = 0
