@@ -88,9 +88,6 @@ cmp.setup.cmdline(':', {
     }, {
         {
             name = 'cmdline',
-            -- entry_filter = function(entry, ctx)
-            --     return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Variable'
-            -- end
         }
     })
 })
