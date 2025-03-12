@@ -16,10 +16,10 @@ return require('packer').startup(function()
     use 'NLKNguyen/papercolor-theme'
     use 'jacoborus/tender.vim'
     use 'rhysd/vim-color-spring-night'
-    use {
-        'shaunsingh/oxocarbon.nvim',
-        run = './install.sh',
-    }
+    -- use {
+    --     'shaunsingh/oxocarbon.nvim',
+    --     run = './install.sh',
+    -- }
     use 'rebelot/kanagawa.nvim'
     -- Vertical indent lines
     use 'yggdroot/indentLine'
@@ -28,7 +28,7 @@ return require('packer').startup(function()
     -- Fuzzy finder Telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
     -- LSP
     use 'neovim/nvim-lspconfig'
@@ -36,13 +36,13 @@ return require('packer').startup(function()
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     -- Completions
-    use { 'hrsh7th/nvim-cmp', branch = 'main' } -- Completions framework
+    use { 'hrsh7th/nvim-cmp', branch = 'main' }     -- Completions framework
     use { 'hrsh7th/cmp-nvim-lsp', branch = 'main' } -- Completions for nvim builtin LSP
-    use { 'hrsh7th/cmp-buffer', branch = 'main' } -- Buffer completions
-    use { 'hrsh7th/cmp-path', branch = 'main' } -- Path completions
-    use { 'hrsh7th/cmp-cmdline', branch = 'main' } -- Cmd completions
-    use { 'hrsh7th/cmp-vsnip', branch = 'main' } -- Snippets completions
-    use { 'hrsh7th/vim-vsnip' } -- Snippets engine
+    use { 'hrsh7th/cmp-buffer', branch = 'main' }   -- Buffer completions
+    use { 'hrsh7th/cmp-path', branch = 'main' }     -- Path completions
+    use { 'hrsh7th/cmp-cmdline', branch = 'main' }  -- Cmd completions
+    use { 'hrsh7th/cmp-vsnip', branch = 'main' }    -- Snippets completions
+    use { 'hrsh7th/vim-vsnip' }                     -- Snippets engine
     -- Rust file detection, syntax highlighting, formating etc
     -- use 'rust-lang/rust.vim'
     -- Debugger

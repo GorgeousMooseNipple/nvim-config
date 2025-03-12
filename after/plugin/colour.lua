@@ -24,3 +24,5 @@ vim.g.airline_section_z =
 '%2.p%%%#__accent_bold# ln:%l%#__restore__#%#__accent_bold#/%L%#__restore__#%#__accent_bold# cl:%-3.v%#__restore__#'
 
 vim.api.nvim_set_hl(0, '@punctuation.bracket', { link = '' })
+
+vim.cmd([[colorscheme kanagawa-wave]])
