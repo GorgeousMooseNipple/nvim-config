@@ -25,4 +25,4 @@ vim.g.airline_section_z =
 
 vim.api.nvim_set_hl(0, '@punctuation.bracket', { link = '' })
 
-vim.cmd([[colorscheme kanagawa-wave]])
+vim.cmd('colorscheme kanagawa-wave')
