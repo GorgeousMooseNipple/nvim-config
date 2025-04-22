@@ -2,7 +2,7 @@ local mason_lspconfig = require('mason-lspconfig')
 
 local lspconfig = require('lspconfig')
 
-local servers = { 'lua_ls', 'pyright', 'rust_analyzer', 'bashls', 'taplo', 'gopls' }
+local servers = { 'lua_ls', 'basedpyright', 'rust_analyzer', 'bashls', 'taplo', 'gopls' }
 
 mason_lspconfig.setup({
     ensure_installed = servers,
