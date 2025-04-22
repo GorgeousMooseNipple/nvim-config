@@ -56,4 +56,10 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     -- Completion, annotations and signatures of neovim apis
     use 'folke/neodev.nvim'
+    use {
+        'stevearc/conform.nvim',
+        config = function()
+            require('conform').setup()
+        end,
+    }
 end)

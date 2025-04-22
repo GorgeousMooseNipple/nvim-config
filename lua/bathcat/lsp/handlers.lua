@@ -2,15 +2,15 @@ local M = {}
 
 M.setup = function()
     -- Signs for linting panel on the left side of the screen
-	local signs = {
-		{ name = "DiagnosticSignError", text = "✖" },
-		{ name = "DiagnosticSignWarn", text = "⚠" },
-		{ name = "DiagnosticSignHint", text = "ℹ"  },
-		{ name = "DiagnosticSignInfo", text = "?" },
-	}
+    local signs = {
+        { name = "DiagnosticSignError", text = "✖" },
+        { name = "DiagnosticSignWarn", text = "⚠" },
+        { name = "DiagnosticSignHint", text = "ℹ" },
+        { name = "DiagnosticSignInfo", text = "?" },
+    }
 
     for _, sign in pairs(signs) do
-        vim.fn.sign_define(sign.name, {texth1 = sign.name, text = sign.text, numh1 = ''})
+        vim.fn.sign_define(sign.name, { texth1 = sign.name, text = sign.text, numh1 = '' })
     end
 
     local config = {
@@ -50,9 +50,15 @@ M.setup = function()
     })
 
     -- Format on save for .py files
-    vim.api.nvim_create_autocmd('BufWritePost', {
-        pattern = '*.py',
-        command = 'silent !ruff format <afile>',
+    -- vim.api.nvim_create_autocmd('BufWritePost', {
+    --     pattern = '*.py',
+    --     command = 'silent !ruff format <afile>',
+    -- })
+    vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = "*.py",
+        callback = function(args)
+            require('conform').format({ bufnr = args.buf })
+        end,
     })
 
     -- Format on save for .rs files
@@ -104,4 +110,3 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 M.capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 return M
-
