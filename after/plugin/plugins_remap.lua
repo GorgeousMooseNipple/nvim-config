@@ -1,7 +1,22 @@
 local nnoremap = require('bathcat.keymap').nnoremap
 local vnoremap = require('bathcat.keymap').vnoremap
 
-nnoremap('<leader>ps', '<cmd>Telescope find_files<cr>')
+local function find_files_no_bin()
+    require('telescope.builtin').find_files {
+        find_command = {
+            "rg",
+            "-l",
+            ".*",
+            "--follow",
+            "--hidden",
+            "--glob",
+            "!target/*",
+        },
+    }
+end
+
+-- nnoremap('<leader>ps', '<cmd>Telescope find_files<cr>')
+nnoremap('<leader>ps', find_files_no_bin)
 nnoremap('<leader>ni', '<cmd>Telescope find_files no_ignore=true<cr>')
 nnoremap('<leader>lg', '<cmd>Telescope live_grep<cr>')
 nnoremap('<leader>sk', '<cmd>Telescope keymaps<cr>')
@@ -26,4 +41,3 @@ nnoremap('<leader>cc', '<plug>NERDCommenterToggle')
 vnoremap('<leader>cc', '<plug>NERDCommenterToggle')
 nnoremap('<leader>cs', '<plug>NERDCommenterSexy')
 vnoremap('<leader>cs', '<plug>NERDCommenterSexy')
-
