@@ -1,5 +1,8 @@
-require('telescope').setup{
+require('telescope').setup {
     defaults = {
+        file_ignore_patterns = {
+            ".*.tar.gz",
+        },
         mappings = {
             i = {
                 ['<esc>'] = 'close',
