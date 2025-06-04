@@ -92,7 +92,7 @@ local function lsp_keymaps(bufnr)
     keymap('[e', '<cmd>lua vim.diagnostic.jump({count = -1, float = true, severity = vim.diagnostic.severity.ERROR})<CR>')
     keymap(']e', '<cmd>lua vim.diagnostic.jump({count = 1, float = true, severity = vim.diagnostic.severity.ERROR})<CR>')
     keymap('<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
-    keymap('<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+    keymap('<leader>ca', '<cmd>lua vim.lsp.buf.code_action({apply = true})<CR>')
     vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{async=true}' ]])
 end
 
