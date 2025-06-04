@@ -86,7 +86,7 @@ local function lsp_keymaps(bufnr)
     keymap('[d', '<cmd>lua vim.diagnostic.goto_prev({border = "rounded"})<CR>')
     keymap(']d', '<cmd>lua vim.diagnostic.goto_next({border = "rounded"})<CR>')
     keymap('<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
-    keymap('<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+    keymap('<leader>ca', '<cmd>lua vim.lsp.buf.code_action({apply = true})<CR>')
     vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{async=true}' ]])
 end
 
