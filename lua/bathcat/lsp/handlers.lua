@@ -50,10 +50,6 @@ M.setup = function()
     })
 
     -- Format on save for .py files
-    -- vim.api.nvim_create_autocmd('BufWritePost', {
-    --     pattern = '*.py',
-    --     command = 'silent !ruff format <afile>',
-    -- })
     vim.api.nvim_create_autocmd('BufWritePre', {
         pattern = "*.py",
         callback = function(args)
