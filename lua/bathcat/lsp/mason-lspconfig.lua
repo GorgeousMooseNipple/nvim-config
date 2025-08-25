@@ -6,6 +6,7 @@ local servers = { 'lua_ls', 'basedpyright', 'rust_analyzer', 'bashls', 'taplo' }
 
 mason_lspconfig.setup({
     ensure_installed = servers,
+    automatic_enable = false,
 })
 
 for _, server in pairs(servers) do
