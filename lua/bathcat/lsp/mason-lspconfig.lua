@@ -9,7 +9,6 @@ mason_lspconfig.setup({
 
 for _, server in pairs(servers) do
     local opts = {
-        on_attach = require('bathcat.lsp.handlers').on_attach,
         capabilities = require('bathcat.lsp.handlers').capabilities,
     }
     local has_settings, settings = pcall(require, 'bathcat.lsp.settings.' .. server)
@@ -19,3 +18,9 @@ for _, server in pairs(servers) do
     vim.lsp.config(server, opts)
     vim.lsp.enable(server)
 end
+
+vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(args)
+        require('bathcat.lsp.handlers').on_attach(args.data.client_id, args.buf)
+    end
+})
