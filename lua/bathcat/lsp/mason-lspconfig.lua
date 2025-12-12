@@ -1,7 +1,5 @@
 local mason_lspconfig = require('mason-lspconfig')
 
-local lspconfig = require('lspconfig')
-
 local servers = { 'lua_ls', 'basedpyright', 'bashls', 'clangd', 'robotframework_ls' }
 
 mason_lspconfig.setup({
@@ -18,5 +16,6 @@ for _, server in pairs(servers) do
     if has_settings then
         opts = vim.tbl_deep_extend('force', opts, settings)
     end
-    lspconfig[server].setup(opts)
+    vim.lsp.config(server, opts)
+    vim.lsp.enable(server)
 end
