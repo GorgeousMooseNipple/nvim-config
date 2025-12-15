@@ -1,5 +1,9 @@
-local util = require('lspconfig.util')
-return {
-    root_dir = util.path.dirname
-}
+local function buf_dir()
+    local bufn = vim.api.nvim_get_current_buf()
+    local file = vim.api.nvim_buf_get_name(bufn)
+    return vim.fs.dirname(file)
+end
 
+return {
+    root_dir = buf_dir()
+}
