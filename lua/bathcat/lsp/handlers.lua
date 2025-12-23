@@ -2,21 +2,41 @@ local M = {}
 
 M.setup = function()
     -- Signs for linting panel on the left side of the screen
-    local signs = {
-        { name = "DiagnosticSignError", text = "✖" },
-        { name = "DiagnosticSignWarn", text = "⚠" },
-        { name = "DiagnosticSignHint", text = "ℹ" },
-        { name = "DiagnosticSignInfo", text = "?" },
+    local diagnostic_signs = {
+        [vim.diagnostic.severity.ERROR] = {
+            name = "DiagnosticSignError",
+            text = "x",
+        },
+        [vim.diagnostic.severity.WARN] = {
+            name = "DiagnosticSignWarn",
+            text = "⚠",
+        },
+        [vim.diagnostic.severity.HINT] = {
+            name = "DiagnosticSignHint",
+            text = "i",
+        },
+        [vim.diagnostic.severity.INFO] = {
+            name = "DiagnosticSignInfo",
+            text = "i",
+        },
     }
 
-    for _, sign in pairs(signs) do
-        vim.fn.sign_define(sign.name, { texth1 = sign.name, text = sign.text, numh1 = '' })
+    local signs = {
+        text = {},
+        texth1 = {},
+        numh1 = {},
+    }
+
+    for severity, sign in pairs(diagnostic_signs) do
+        signs.text[severity] = sign.text
+        signs.texth1 = sign.name
+        signs.numh1 = ''
     end
 
     local config = {
         virtual_text = true,
         -- Show signs
-        signs = { active = signs },
+        signs = signs,
         update_in_insert = false,
         underline = true,
         severity_sort = true,
