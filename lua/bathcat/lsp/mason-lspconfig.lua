@@ -1,6 +1,6 @@
 local mason_lspconfig = require('mason-lspconfig')
 
-local servers = { 'lua_ls', 'basedpyright', 'bashls', 'clangd', 'robotframework_ls' }
+local servers = { 'lua_ls', 'basedpyright', 'bashls', 'clangd', 'robotframework_ls', 'groovyls' }
 
 mason_lspconfig.setup({
     ensure_installed = servers,
