@@ -18,9 +18,7 @@ return {
                 postfix = { enable = false },
             },
             diagnostics = { enable = true },
-            checkOnSave = {
-                command = 'clippy'
-            },
+            checkOnSave = true,
         }
     }
 }
