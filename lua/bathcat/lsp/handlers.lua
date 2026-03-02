@@ -88,6 +88,13 @@ M.setup = function()
         pattern = '*.lua',
         command = 'lua vim.lsp.buf.format()',
     })
+
+    -- Map *.Jenkinsfile files to be seen as "groovy" filetype
+    vim.filetype.add({
+        extension = {
+            Jenkinsfile = "groovy",
+        },
+    })
 end
 
 -- Keybindings for LSP
