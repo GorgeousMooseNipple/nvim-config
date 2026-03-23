@@ -34,8 +34,10 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = "netrw",
     callback = function()
         vim.keymap.set("n", "<C-t>", function()
+            local dir = vim.b.netrw_curdir
             local file = vim.fn.expand("<cfile>")
-            vim.cmd("tabedit " .. file)
+            local path = vim.fs.joinpath(dir, file)
+            vim.cmd("tabedit " .. path)
             vim.cmd("tabprevious")
         end, {
             buffer = true,
