@@ -43,6 +43,7 @@ return require('packer').startup(function()
     use { 'hrsh7th/cmp-cmdline', branch = 'main' }  -- Cmd completions
     use { 'hrsh7th/cmp-vsnip', branch = 'main' }    -- Snippets completions
     use { 'hrsh7th/vim-vsnip' }                     -- Snippets engine
+    use { 'lukas-reineke/cmp-under-comparator' }
     -- Rust file detection, syntax highlighting, formating etc
     -- use 'rust-lang/rust.vim'
     -- Debugger
