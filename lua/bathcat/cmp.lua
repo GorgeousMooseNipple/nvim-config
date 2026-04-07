@@ -28,7 +28,8 @@ cmp.setup({
             else
                 fallback()
             end
-        end, { 'i', 's' })
+        end, { 'i', 's' }),
+        ['<C-Space>'] = cmp.mapping.complete(),
     },
     formatting = {
         fields = { 'kind', 'abbr', 'menu' },
