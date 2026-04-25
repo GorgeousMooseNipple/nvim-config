@@ -27,7 +27,7 @@ return require('packer').startup(function()
     use 'luochen1990/rainbow'
     -- Fuzzy finder Telescope
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+        'nvim-telescope/telescope.nvim',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     -- LSP
@@ -52,7 +52,7 @@ return require('packer').startup(function()
     use 'preservim/nerdcommenter'
     -- Highlight other uses of the current word
     use 'RRethy/vim-illuminate'
-    -- Syntax highlights, seelction, navigation
+    -- Syntax highlights, selection, navigation
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     -- Completion, annotations and signatures of neovim apis

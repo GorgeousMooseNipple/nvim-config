@@ -63,3 +63,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Disable conceal for json files
 vim.g.vim_json_conceal = 0
+
+-- Folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldenable = true
+vim.opt.foldlevel = 99

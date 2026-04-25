@@ -1,6 +1,6 @@
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.config').setup {
     ensure_installed = { 'go', 'lua', 'python', 'rust', 'bash' },
-
+    fold = { enable = true },
     highlight = { enable = true },
     incremental_selection = {
         enable = true,
